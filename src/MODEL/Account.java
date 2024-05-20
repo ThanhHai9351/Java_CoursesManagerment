@@ -180,4 +180,44 @@ public class Account {
         return null;
     }
     
+    public Account getAcountFromID(int id)
+    {
+        DAOAccount db = new DAOAccount();
+        ArrayList<Account> acs = db.getAllDataAccount();
+        for(Account a : acs)
+        {
+            if(a.getId() == id)
+                return a;
+        }
+        return null;
+    }
+    
+     public boolean editAccount(int id, String name, Date date, String phone, String address, String cccd, boolean gender) {
+         DAOAccount db = new DAOAccount();
+         if(db.editDataAccount(id, name, date, phone, address, cccd, gender))
+         {
+             return true;
+         }
+         return false;
+     }
+     
+     public boolean deleteAccount(int id)
+     {
+         DAOAccount db = new DAOAccount();
+         if(db.deleteDataAccount(id))
+         {
+             return true;
+         }
+         return false;
+     }
+     
+     public boolean createAccount(String name, Date date, String phone, String address, String cccd, boolean gender) {
+         DAOAccount db = new DAOAccount();
+         if(db.createDataAccount(name, date, phone, address, cccd, gender))
+         {
+             return true;
+         }
+         return false;
+     }
+    
 }
