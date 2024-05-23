@@ -10,7 +10,10 @@
             <file>file:/F:/HK6/Java/BaiTap/TrungTam/src/UIAdmin/DashboardAdmin.java</file>
             <file>file:/F:/HK6/Java/BaiTap/TrungTam/src/DAO/DAOAccount.java</file>
             <file>file:/F:/HK6/Java/BaiTap/TrungTam/src/UIAdmin/CreateStudent.java</file>
+            <file>file:/F:/HK6/Java/BaiTap/TrungTam/src/DAO/DAOCourseSchedule.java</file>
             <file>file:/F:/HK6/Java/BaiTap/TrungTam/src/DAO/ConnectDB.java</file>
+            <file>file:/F:/HK6/Java/BaiTap/TrungTam/src/UIStudent/DashboardStudent.java</file>
+            <file>file:/F:/HK6/Java/BaiTap/TrungTam/src/Login.java</file>
         </group>
     </open-files>
 </project-private>

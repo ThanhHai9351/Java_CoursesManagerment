@@ -59,11 +59,9 @@ CREATE TABLE RegisterCourse
     ID INT PRIMARY KEY IDENTITY(1,1),
     IDStudent INT,
     IDCourseSchedule INT,
-    IDTeacher INT,
     IDCentralLocation INT,
 	IsPayment bit,
     CONSTRAINT fk_RegisterCourse_Student FOREIGN KEY(IDStudent) REFERENCES dbo.Account(ID),
-    CONSTRAINT fk_RegisterCourse_Teacher FOREIGN KEY(IDTeacher) REFERENCES dbo.Account(ID),
     CONSTRAINT fk_RegisterCourse_Course FOREIGN KEY(IDCourseSchedule) REFERENCES dbo.CourseSchedule(ID),
     CONSTRAINT fk_RegisterCourse_CentralLocation FOREIGN KEY(IDCentralLocation) REFERENCES dbo.CentralLocation(ID)
 );
@@ -168,12 +166,12 @@ INSERT INTO Schedule (Day, Time, NumberOfShift, IDCourseSchedule) VALUES
 ('2024-06-19', '09:00', 2, 1),
 ('2024-06-21', '09:00', 2, 1);
 
-INSERT INTO RegisterCourse (IDStudent, IDCourseSchedule, IDTeacher, IDCentralLocation,IsPayment) VALUES 
-(3, 1, 2, 1,1),
-(4, 1, 2, 1,1),
-(6, 1, 2, 1,1),
-(8, 1, 2, 1,1),
-(9, 1, 2, 1,1)
+INSERT INTO RegisterCourse (IDStudent, IDCourseSchedule, IDCentralLocation,IsPayment) VALUES 
+(3, 1, 1,1),
+(4, 1, 1,1),
+(6, 1, 1,1),
+(8, 1, 1,1),
+(9, 1, 1,1)
 
 INSERT INTO Mail (IDAccount, Title, Message, IsRead) VALUES 
 (2, 'Welcome', 'Welcome to the course!', 0),

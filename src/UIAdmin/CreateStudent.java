@@ -245,10 +245,26 @@ public class CreateStudent extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    public boolean isValidData()
+    {
+        String name = txtNameStudent.getText().toString();
+        String date = txtDateStudent.getText().toString();
+        String sdt = txtPhoneStudent.getText().toString();
+        String dc = txtAdressStudent.getText().toString();
+        String cccd = txtCCCDStudent.getText().toString();
+        if(!name.isEmpty()&&!date.isEmpty()&&!sdt.isEmpty()&&!dc.isEmpty()&&!cccd.isEmpty())
+        {
+            return true;
+        }
+        return false;
+    }
+    
     private void btnCreateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCreateMouseClicked
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
-        try {
+        if(!isValidData())
+        {
+             try {
                 String name = txtNameStudent.getText().trim();
                 java.util.Date utilDate = dateFormat.parse(txtDateStudent.getText().trim());
                 String phone = txtPhoneStudent.getText().toString().trim();
@@ -259,7 +275,6 @@ public class CreateStudent extends javax.swing.JFrame {
                 {
                     gender = false;
                 }
-
                 boolean success = account.createAccount( name, utilDate, phone, address, cccd, gender);
 
                 if (success) {
@@ -274,6 +289,10 @@ public class CreateStudent extends javax.swing.JFrame {
             } catch (NumberFormatException e) {
                 JOptionPane.showMessageDialog(null, "Định dạng số không hợp lệ!", "Lỗi", JOptionPane.ERROR_MESSAGE);
             }
+        }else{
+            JOptionPane.showMessageDialog(this, "Bank chưa điền đủ trương!");
+        }
+       
     }//GEN-LAST:event_btnCreateMouseClicked
 
     /**

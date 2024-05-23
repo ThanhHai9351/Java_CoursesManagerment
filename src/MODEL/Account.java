@@ -219,5 +219,19 @@ public class Account {
          }
          return false;
      }
+     
+     public ArrayList<Account> getStudentFromName(String name)
+     {
+         ArrayList<Account> acs = getAllStudent();
+         ArrayList<Account> data = new ArrayList<>();
+         for(Account a : acs)
+         {
+            if(a.getName().toLowerCase().trim().contains(name.toLowerCase().trim()))
+            {
+                data.add(a);
+            }
+         }
+         return data;
+     }
     
 }
