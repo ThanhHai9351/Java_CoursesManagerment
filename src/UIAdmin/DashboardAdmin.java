@@ -211,24 +211,19 @@ public class DashboardAdmin extends javax.swing.JFrame {
         txtCCCDStudent = new javax.swing.JTextField();
         jLabel16 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
-        btnEditStudent = new javax.swing.JPanel();
-        jLabel19 = new javax.swing.JLabel();
-        btnDeleteStudent = new javax.swing.JPanel();
-        jLabel20 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         txtAdressStudent = new javax.swing.JTextArea();
         rdoMaleStudent = new javax.swing.JRadioButton();
         rdoFemaleStudent = new javax.swing.JRadioButton();
-        btnCreateStudent = new javax.swing.JPanel();
-        jLabel9 = new javax.swing.JLabel();
+        btnEditStudent = new javax.swing.JButton();
+        btnDeleteStudent = new javax.swing.JButton();
         txtSearchStudent = new javax.swing.JTextField();
         btnFind = new javax.swing.JButton();
+        btnCreateStudent = new javax.swing.JButton();
         itemfrmTeacherAdmin = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
 
         jLabel17.setText("jLabel17");
-
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(51, 51, 255));
 
@@ -750,66 +745,6 @@ public class DashboardAdmin extends javax.swing.JFrame {
         jLabel18.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel18.setText("Gender:");
 
-        btnEditStudent.setBackground(new java.awt.Color(153, 153, 0));
-        btnEditStudent.setPreferredSize(new java.awt.Dimension(105, 52));
-        btnEditStudent.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnEditStudentMouseClicked(evt);
-            }
-        });
-
-        jLabel19.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel19.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel19.setText("EDIT");
-
-        javax.swing.GroupLayout btnEditStudentLayout = new javax.swing.GroupLayout(btnEditStudent);
-        btnEditStudent.setLayout(btnEditStudentLayout);
-        btnEditStudentLayout.setHorizontalGroup(
-            btnEditStudentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btnEditStudentLayout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(25, Short.MAX_VALUE))
-        );
-        btnEditStudentLayout.setVerticalGroup(
-            btnEditStudentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btnEditStudentLayout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(jLabel19)
-                .addContainerGap(20, Short.MAX_VALUE))
-        );
-
-        btnDeleteStudent.setBackground(new java.awt.Color(255, 0, 51));
-        btnDeleteStudent.setPreferredSize(new java.awt.Dimension(105, 52));
-        btnDeleteStudent.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnDeleteStudentMouseClicked(evt);
-            }
-        });
-
-        jLabel20.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel20.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel20.setText("DELETE");
-
-        javax.swing.GroupLayout btnDeleteStudentLayout = new javax.swing.GroupLayout(btnDeleteStudent);
-        btnDeleteStudent.setLayout(btnDeleteStudentLayout);
-        btnDeleteStudentLayout.setHorizontalGroup(
-            btnDeleteStudentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btnDeleteStudentLayout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(25, Short.MAX_VALUE))
-        );
-        btnDeleteStudentLayout.setVerticalGroup(
-            btnDeleteStudentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btnDeleteStudentLayout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(jLabel20)
-                .addContainerGap(20, Short.MAX_VALUE))
-        );
-
         txtAdressStudent.setColumns(20);
         txtAdressStudent.setRows(5);
         jScrollPane3.setViewportView(txtAdressStudent);
@@ -817,6 +752,26 @@ public class DashboardAdmin extends javax.swing.JFrame {
         rdoMaleStudent.setText("Nam");
 
         rdoFemaleStudent.setText("Nu");
+
+        btnEditStudent.setBackground(new java.awt.Color(204, 204, 0));
+        btnEditStudent.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnEditStudent.setForeground(new java.awt.Color(255, 255, 255));
+        btnEditStudent.setText("EDIT");
+        btnEditStudent.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditStudentActionPerformed(evt);
+            }
+        });
+
+        btnDeleteStudent.setBackground(new java.awt.Color(255, 0, 51));
+        btnDeleteStudent.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnDeleteStudent.setForeground(new java.awt.Color(255, 255, 255));
+        btnDeleteStudent.setText("DELETE");
+        btnDeleteStudent.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteStudentActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -862,11 +817,11 @@ public class DashboardAdmin extends javax.swing.JFrame {
                                 .addGap(1, 1, 1)))
                         .addGap(16, 16, 16))
                     .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGap(66, 66, 66)
-                        .addComponent(btnEditStudent, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnDeleteStudent, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(48, 48, 48))))
+                        .addGap(57, 57, 57)
+                        .addComponent(btnEditStudent, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(60, 60, 60)
+                        .addComponent(btnDeleteStudent, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -887,7 +842,7 @@ public class DashboardAdmin extends javax.swing.JFrame {
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel15)
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel16)
                     .addComponent(txtCCCDStudent, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -897,39 +852,10 @@ public class DashboardAdmin extends javax.swing.JFrame {
                     .addComponent(rdoMaleStudent)
                     .addComponent(rdoFemaleStudent))
                 .addGap(29, 29, 29)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnEditStudent, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnDeleteStudent, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnEditStudent, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnDeleteStudent, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(47, 47, 47))
-        );
-
-        btnCreateStudent.setBackground(new java.awt.Color(51, 51, 255));
-        btnCreateStudent.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnCreateStudentMouseClicked(evt);
-            }
-        });
-
-        jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel9.setText("CREATE");
-
-        javax.swing.GroupLayout btnCreateStudentLayout = new javax.swing.GroupLayout(btnCreateStudent);
-        btnCreateStudent.setLayout(btnCreateStudentLayout);
-        btnCreateStudentLayout.setHorizontalGroup(
-            btnCreateStudentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btnCreateStudentLayout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(25, Short.MAX_VALUE))
-        );
-        btnCreateStudentLayout.setVerticalGroup(
-            btnCreateStudentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btnCreateStudentLayout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(jLabel9)
-                .addContainerGap(20, Short.MAX_VALUE))
         );
 
         btnFind.setBackground(new java.awt.Color(0, 153, 51));
@@ -938,6 +864,16 @@ public class DashboardAdmin extends javax.swing.JFrame {
         btnFind.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnFindActionPerformed(evt);
+            }
+        });
+
+        btnCreateStudent.setBackground(new java.awt.Color(51, 51, 255));
+        btnCreateStudent.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnCreateStudent.setForeground(new java.awt.Color(255, 255, 255));
+        btnCreateStudent.setText("CREATE");
+        btnCreateStudent.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCreateStudentActionPerformed(evt);
             }
         });
 
@@ -950,29 +886,25 @@ public class DashboardAdmin extends javax.swing.JFrame {
                 .addGroup(itemfrmStudentAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(itemfrmStudentAdminLayout.createSequentialGroup()
-                        .addComponent(txtSearchStudent, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnFind, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtSearchStudent, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(btnCreateStudent, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btnFind, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnCreateStudent, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(12, 12, 12)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         itemfrmStudentAdminLayout.setVerticalGroup(
             itemfrmStudentAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(itemfrmStudentAdminLayout.createSequentialGroup()
-                .addGroup(itemfrmStudentAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(itemfrmStudentAdminLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(btnCreateStudent, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(itemfrmStudentAdminLayout.createSequentialGroup()
-                        .addGap(14, 14, 14)
-                        .addGroup(itemfrmStudentAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btnFind, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
-                            .addComponent(txtSearchStudent))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 367, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(3, 3, 3)
+                .addGroup(itemfrmStudentAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnFind)
+                    .addComponent(btnCreateStudent, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtSearchStudent, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
             .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
@@ -1127,68 +1059,6 @@ public class DashboardAdmin extends javax.swing.JFrame {
                 }
     }//GEN-LAST:event_tblStudentMouseClicked
 
-    private void btnEditStudentMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEditStudentMouseClicked
-         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        int selectedRow = tblStudent.getSelectedRow();
-        
-        if (selectedRow != -1) {
-            try {
-                int id = Integer.parseInt(tblStudent.getValueAt(selectedRow, 0).toString());
-                String name = txtNameStudent.getText().trim();
-                java.util.Date utilDate = dateFormat.parse(txtDateStudent.getText().trim());
-                String phone = txtPhoneStudent.getText().toString().trim();
-                String address = txtAdressStudent.getText().toString();
-                String cccd = txtCCCDStudent.getText().toString();
-                boolean gender = true;
-                if(rdoFemaleStudent.isSelected())
-                {
-                    gender = false;
-                }
-
-                boolean success = account.editAccount(id, name, utilDate, phone, address, cccd, gender);
-
-                if (success) {
-                    JOptionPane.showMessageDialog(null, "Cập nhật thông tin học viên thành công!", "Thông báo", JOptionPane.INFORMATION_MESSAGE);
-                    showfrmStudent();
-                } else {
-                    JOptionPane.showMessageDialog(null, "Cập nhật thông tin học viên thất bại!", "Thông báo", JOptionPane.ERROR_MESSAGE);
-                }
-
-            } catch (ParseException e) {
-                JOptionPane.showMessageDialog(null, "Định dạng ngày tháng không hợp lệ!", "Lỗi", JOptionPane.ERROR_MESSAGE);
-            } catch (NumberFormatException e) {
-                JOptionPane.showMessageDialog(null, "Định dạng số không hợp lệ!", "Lỗi", JOptionPane.ERROR_MESSAGE);
-            }
-        } else {
-            JOptionPane.showMessageDialog(null, "Bạn chưa chọn học viên để chỉnh sửa", "Thông báo", JOptionPane.WARNING_MESSAGE);
-        }
-    }//GEN-LAST:event_btnEditStudentMouseClicked
-
-    private void btnDeleteStudentMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDeleteStudentMouseClicked
-        int selectedRow = tblStudent.getSelectedRow();
-        
-        if (selectedRow != -1) {
-                int id = Integer.parseInt(tblStudent.getValueAt(selectedRow, 0).toString());
-                
-                boolean success = account.deleteAccount(id);
-
-                if (success) {
-                    JOptionPane.showMessageDialog(null, "Xóa học viên thành công!", "Thông báo", JOptionPane.INFORMATION_MESSAGE);
-                    showfrmStudent();
-                } else {
-                    JOptionPane.showMessageDialog(null, "Xóa học viên thất bại!", "Thông báo", JOptionPane.ERROR_MESSAGE);
-                }
-
-        } else {
-            JOptionPane.showMessageDialog(null, "Bạn chưa chọn học viên để xóa!", "Thông báo", JOptionPane.WARNING_MESSAGE);
-        }
-    }//GEN-LAST:event_btnDeleteStudentMouseClicked
-
-    private void btnCreateStudentMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCreateStudentMouseClicked
-        CreateStudent frm = new CreateStudent();
-        frm.setVisible(true);
-    }//GEN-LAST:event_btnCreateStudentMouseClicked
-
     private void btnFindActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFindActionPerformed
         String search = txtSearchStudent.getText().toString().trim();
          DefaultTableModel model = new DefaultTableModel();
@@ -1227,6 +1097,68 @@ public class DashboardAdmin extends javax.swing.JFrame {
             tblStudent.setModel(model);
     }//GEN-LAST:event_btnFindActionPerformed
 
+    private void btnCreateStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateStudentActionPerformed
+        CreateStudent frm = new CreateStudent();
+        frm.setVisible(true);
+    }//GEN-LAST:event_btnCreateStudentActionPerformed
+
+    private void btnEditStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditStudentActionPerformed
+       SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        int selectedRow = tblStudent.getSelectedRow();
+        
+        if (selectedRow != -1) {
+            try {
+                int id = Integer.parseInt(tblStudent.getValueAt(selectedRow, 0).toString());
+                String name = txtNameStudent.getText().trim();
+                java.util.Date utilDate = dateFormat.parse(txtDateStudent.getText().trim());
+                String phone = txtPhoneStudent.getText().toString().trim();
+                String address = txtAdressStudent.getText().toString();
+                String cccd = txtCCCDStudent.getText().toString();
+                boolean gender = true;
+                if(rdoFemaleStudent.isSelected())
+                {
+                    gender = false;
+                }
+
+                boolean success = account.editAccount(id, name, utilDate, phone, address, cccd, gender);
+
+                if (success) {
+                    JOptionPane.showMessageDialog(null, "Cập nhật thông tin học viên thành công!", "Thông báo", JOptionPane.INFORMATION_MESSAGE);
+                    showfrmStudent();
+                } else {
+                    JOptionPane.showMessageDialog(null, "Cập nhật thông tin học viên thất bại!", "Thông báo", JOptionPane.ERROR_MESSAGE);
+                }
+
+            } catch (ParseException e) {
+                JOptionPane.showMessageDialog(null, "Định dạng ngày tháng không hợp lệ!", "Lỗi", JOptionPane.ERROR_MESSAGE);
+            } catch (NumberFormatException e) {
+                JOptionPane.showMessageDialog(null, "Định dạng số không hợp lệ!", "Lỗi", JOptionPane.ERROR_MESSAGE);
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Bạn chưa chọn học viên để chỉnh sửa", "Thông báo", JOptionPane.WARNING_MESSAGE);
+        }
+    }//GEN-LAST:event_btnEditStudentActionPerformed
+
+    private void btnDeleteStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteStudentActionPerformed
+       int selectedRow = tblStudent.getSelectedRow();
+        
+        if (selectedRow != -1) {
+                int id = Integer.parseInt(tblStudent.getValueAt(selectedRow, 0).toString());
+                
+                boolean success = account.deleteAccount(id);
+
+                if (success) {
+                    JOptionPane.showMessageDialog(null, "Xóa học viên thành công!", "Thông báo", JOptionPane.INFORMATION_MESSAGE);
+                    showfrmStudent();
+                } else {
+                    JOptionPane.showMessageDialog(null, "Xóa học viên thất bại!", "Thông báo", JOptionPane.ERROR_MESSAGE);
+                }
+
+        } else {
+            JOptionPane.showMessageDialog(null, "Bạn chưa chọn học viên để xóa!", "Thông báo", JOptionPane.WARNING_MESSAGE);
+        }
+    }//GEN-LAST:event_btnDeleteStudentActionPerformed
+
     public void showDashboard()
     {
          itemfrmDashboardAdmin.setVisible(true);
@@ -1242,7 +1174,6 @@ public class DashboardAdmin extends javax.swing.JFrame {
          lbClass.setForeground(Color.white);
          lbTeacher.setForeground(Color.white);
         showfrmDashboard();
-
     }
     
     public void showTeacher()
@@ -1363,9 +1294,9 @@ public class DashboardAdmin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel btnCreateStudent;
-    private javax.swing.JPanel btnDeleteStudent;
-    private javax.swing.JPanel btnEditStudent;
+    private javax.swing.JButton btnCreateStudent;
+    private javax.swing.JButton btnDeleteStudent;
+    private javax.swing.JButton btnEditStudent;
     private javax.swing.JButton btnFind;
     private javax.swing.JPanel itemClass;
     private javax.swing.JPanel itemDashboard;
@@ -1391,16 +1322,13 @@ public class DashboardAdmin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

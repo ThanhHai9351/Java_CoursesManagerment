@@ -61,12 +61,9 @@ public class CreateStudent extends javax.swing.JFrame {
         jLabel18 = new javax.swing.JLabel();
         rdoMaleStudent = new javax.swing.JRadioButton();
         rdoFemaleStudent = new javax.swing.JRadioButton();
-        btnCreate = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
+        btnCreate = new javax.swing.JButton();
 
         jLabel2.setText("jLabel2");
-
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(255, 153, 102));
 
@@ -124,32 +121,14 @@ public class CreateStudent extends javax.swing.JFrame {
         rdoFemaleStudent.setText("Nu");
 
         btnCreate.setBackground(new java.awt.Color(51, 51, 255));
-        btnCreate.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnCreateMouseClicked(evt);
+        btnCreate.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnCreate.setForeground(new java.awt.Color(255, 255, 255));
+        btnCreate.setText("CREATE");
+        btnCreate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCreateActionPerformed(evt);
             }
         });
-
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("CREATE");
-
-        javax.swing.GroupLayout btnCreateLayout = new javax.swing.GroupLayout(btnCreate);
-        btnCreate.setLayout(btnCreateLayout);
-        btnCreateLayout.setHorizontalGroup(
-            btnCreateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btnCreateLayout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addComponent(jLabel3)
-                .addContainerGap(27, Short.MAX_VALUE))
-        );
-        btnCreateLayout.setVerticalGroup(
-            btnCreateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btnCreateLayout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addComponent(jLabel3)
-                .addContainerGap(19, Short.MAX_VALUE))
-        );
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -170,7 +149,10 @@ public class CreateStudent extends javax.swing.JFrame {
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(rdoMaleStudent, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(rdoFemaleStudent, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(rdoFemaleStudent, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(21, 21, 21)
+                                .addComponent(btnCreate, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(1, 1, 1))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -189,10 +171,6 @@ public class CreateStudent extends javax.swing.JFrame {
                                 .addComponent(txtNameStudent, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap())
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(121, 121, 121)
-                .addComponent(btnCreate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -223,8 +201,8 @@ public class CreateStudent extends javax.swing.JFrame {
                     .addComponent(rdoMaleStudent)
                     .addComponent(rdoFemaleStudent))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnCreate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(7, 7, 7))
+                .addComponent(btnCreate, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -245,24 +223,10 @@ public class CreateStudent extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    public boolean isValidData()
-    {
-        String name = txtNameStudent.getText().toString();
-        String date = txtDateStudent.getText().toString();
-        String sdt = txtPhoneStudent.getText().toString();
-        String dc = txtAdressStudent.getText().toString();
-        String cccd = txtCCCDStudent.getText().toString();
-        if(!name.isEmpty()&&!date.isEmpty()&&!sdt.isEmpty()&&!dc.isEmpty()&&!cccd.isEmpty())
-        {
-            return true;
-        }
-        return false;
-    }
-    
-    private void btnCreateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCreateMouseClicked
-        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+    private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
+       SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
-        if(!isValidData())
+        if(isValidData())
         {
              try {
                 String name = txtNameStudent.getText().trim();
@@ -292,9 +256,22 @@ public class CreateStudent extends javax.swing.JFrame {
         }else{
             JOptionPane.showMessageDialog(this, "Bank chưa điền đủ trương!");
         }
-       
-    }//GEN-LAST:event_btnCreateMouseClicked
+    }//GEN-LAST:event_btnCreateActionPerformed
 
+    public boolean isValidData()
+    {
+        String name = txtNameStudent.getText().toString();
+        String date = txtDateStudent.getText().toString();
+        String sdt = txtPhoneStudent.getText().toString();
+        String dc = txtAdressStudent.getText().toString();
+        String cccd = txtCCCDStudent.getText().toString();
+        if(!name.isEmpty()&&!date.isEmpty()&&!sdt.isEmpty()&&!dc.isEmpty()&&!cccd.isEmpty())
+        {
+            return true;
+        }
+        return false;
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -331,7 +308,7 @@ public class CreateStudent extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel btnCreate;
+    private javax.swing.JButton btnCreate;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel14;
@@ -339,7 +316,6 @@ public class CreateStudent extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
