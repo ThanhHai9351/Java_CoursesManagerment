@@ -3,17 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/F:/HK6/Java/BaiTap/TrungTam/src/MODEL/Account.java</file>
-            <file>file:/F:/HK6/Java/BaiTap/TrungTam/src/MODEL/Course.java</file>
-            <file>file:/F:/HK6/Java/BaiTap/TrungTam/src/MODEL/CourseSchedule.java</file>
-            <file>file:/F:/HK6/Java/BaiTap/TrungTam/src/DAO/DAOCourse.java</file>
-            <file>file:/F:/HK6/Java/BaiTap/TrungTam/src/UIAdmin/DashboardAdmin.java</file>
-            <file>file:/F:/HK6/Java/BaiTap/TrungTam/src/DAO/DAOAccount.java</file>
-            <file>file:/F:/HK6/Java/BaiTap/TrungTam/src/UIAdmin/CreateStudent.java</file>
-            <file>file:/F:/HK6/Java/BaiTap/TrungTam/src/DAO/DAOCourseSchedule.java</file>
-            <file>file:/F:/HK6/Java/BaiTap/TrungTam/src/DAO/ConnectDB.java</file>
-            <file>file:/F:/HK6/Java/BaiTap/TrungTam/src/UIStudent/DashboardStudent.java</file>
-            <file>file:/F:/HK6/Java/BaiTap/TrungTam/src/Login.java</file>
+            <file>file:/C:/Users/pc/Downloads/Java_CouresManagerment/Java_CouresManagerment/src/DAO/DAOMail.java</file>
+            <file>file:/C:/Users/pc/Downloads/Java_CouresManagerment/Java_CouresManagerment/src/UI/Login.java</file>
+            <file>file:/C:/Users/pc/Downloads/Java_CouresManagerment/Java_CouresManagerment/src/MODEL/Mail.java</file>
+            <file>file:/C:/Users/pc/Downloads/Java_CouresManagerment/Java_CouresManagerment/src/DAO/ConnectDB.java</file>
+            <file>file:/C:/Users/pc/Downloads/Java_CouresManagerment/Java_CouresManagerment/src/UIAdmin/DashboardAdmin.java</file>
+            <file>file:/C:/Users/pc/Downloads/Java_CouresManagerment/Java_CouresManagerment/src/DAO/DAOCourseSchedule.java</file>
+            <file>file:/C:/Users/pc/Downloads/Java_CouresManagerment/Java_CouresManagerment/src/UIStudent/DashboardStudent.java</file>
         </group>
     </open-files>
 </project-private>

@@ -5,6 +5,7 @@
 package MODEL;
 
 import DAO.DAOCourseSchedule;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -117,6 +118,19 @@ public class CourseSchedule {
                }
             }
             return data;
+    }
+    DAOCourseSchedule dao=new DAOCourseSchedule();
+    public void insertCourseSchedule(int idCourse,int slot,int slotNow, java.sql.Date startDate,java.sql.Date endDate,int idTeacher) throws SQLException{
+        dao.insertCourseSchedule(idCourse, slot, slotNow, startDate, endDate, idTeacher);
+    }
+    public void updateCourseSchedule(int id, int idCourse,int slot,int slotNow, java.sql.Date startDate,java.sql.Date endDate, int idTeacher) throws SQLException{
+        dao.updateCourseSchedule(id, idCourse, slot, slotNow, startDate, endDate, idTeacher);
+    }
+    public void deleteCourseSchedule(int id) throws SQLException{
+        dao.deleteCourseSchedule(id);
+    }
+    public int getIDCourseSchedule(int idCourse, java.sql.Date startDay, int idTeacher) throws SQLException{
+        return dao.getIDCourseSchedule(idCourse, startDay, idTeacher);
     }
     
 }
